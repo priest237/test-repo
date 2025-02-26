@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main>
+        <div class="container_1">
+            <header>
+                <h1>Mortage Calculator</h1>
+                <span>Clear All</span>
+            </header>
+            <label for="Mortage">Mortage Amout</label><br>
+            <input type="number" class="input_1" id="Mortage">
+            <div class="nav">
+                <div class="navel">
+                    <label for="term">Mortage term</label><br>
+                    <input type="number" id="term"><br>
+                </div>
+               <div class="navel">
+                <label for="rate">Interest Rate</label> <br>
+                <input type="number" id="rate">
+               </div>
+            </div>
+
+            <h2>Mortage Type</h2>
+            <div class="Repayment">
+                <input type="radio" id="Repayment">
+                <h3>Repayment</h3>
+            </div>
+            <div class="Interst">
+                <input type="radio" id="Interest">
+                <h3>Interst Only</h3>
+            </div>
+
+            <button id="GET" onclick="mortagage()">Calculate Repayment</button>
+        </div>
+        <div class="conatainer_2">
+            <h4>Your Result Will Dispaly Here</h4>
+            <input type="text" class="result_1" id="result">
+        </div>
+    </main>
+    <script>
+
+function mortagage(){
+    let M;
+    let i; 
+    let n;
+    let r;
+    let p;
+    let year;
+    p = parseFloat(document.getElementById('Mortage').value);
+    year = parseFloat(document.getElementById('term').value);
+    r = parseFloat(document.getElementById('rate').value);
+
+    r = r / 100;
+    i = r / 12;
+    n = year * 12;
+
+    if(i===0){
+    M = p / n ;
+    } else{
+        M = ( p * i * Math.pow(1 + i, n)) / (Math.pow(1 + i, n) - 1);
+    }
+    document.getElementById('result').value = M;
+    }
+    </script>
+</body>
+</html>
