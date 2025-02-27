@@ -4,14 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="phone.css">
 </head>
 <body>
     <main>
         <div class="container_1">
             <header>
                 <h1>Mortage Calculator</h1>
-                <span ondblclick="clearValue()">Clear All</span>
+                <span onclick="clearValue()">Clear All</span>
             </header>
             <label for="Mortage">Mortage Amout</label><br>
             <input type="number" class="input_1" id="Mortage">
@@ -28,11 +28,11 @@
 
             <h2>Mortage Type</h2>
             <div class="Repayment">
-                <input type="radio" id="repayment" name="fetch">
+                <input type="radio" class="have" id="repayment" name="fetch">
                 <h3>Repayment</h3>
             </div>
             <div class="Interst">
-                <input type="radio" id="interest">
+                <input type="radio" id="interest" class="have">
                 <h3>Interst Only</h3>
             </div>
 
@@ -76,8 +76,7 @@ function mortagage(){
             alert("choose a formulae");
         }
     }
-   
-    }
+    
     function clearValue(){
         document.getElementById('Mortage').value = "";
         document.getElementById('term').value = "";
@@ -85,6 +84,7 @@ function mortagage(){
         document.getElementById('result').value = "";
         document.getElementById('repayment').value = "";
         document.getElementById('interest').value = "";
+    }
     }
     </script>
 </body>
